@@ -61,7 +61,10 @@ paths:
           schema:
             $ref: '#/definitions/kalanth_api_ktb_req'
       responses:
-        
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/kalanth_api_ktb_res'
         '400':
           description: Invalid ID supplied
         '404':
@@ -85,9 +88,12 @@ paths:
           schema:
             $ref: '#/definitions/kalanth_api_req'
       responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/kalanth_api_res'
         '400':
           description: Invalid status value
-      
 definitions:
   kalanth_api_ktb_req:
     title: kalanth_api_ktb_req
@@ -103,7 +109,6 @@ definitions:
               type: string
             verbatim:
               type: string
-              
   kalanth_api_req:
     title: kalanth_api_req
     description: Object for get kalanth api ktb
@@ -111,7 +116,6 @@ definitions:
     properties:
       Text:
         type: string
-  
   kalanth_api_ktb_res:
     title: kalanth_api_ktb_res
     description: Object respone from kalanth api_ktb
@@ -160,6 +164,18 @@ definitions:
               type: string
       engine_url:
         type: string
-
   kalanth_api_res:
     title: kalanth_api_res
+    description: Object respone from kalanth api_ktb
+    type: object
+    properties:
+      Text:
+        type: string
+      Category:
+        type: string
+      Sentiment:
+        type: string
+      ModelID:
+        type: string
+      engine_url:
+        type: string
